@@ -16,19 +16,14 @@
         <div class="form-box">
             <form action="/dashboard.html" @submit.prevent="submitData">
                 <label for="projekt">Projekt:</label>
-                <select id="projekt" v-model="selectedProject">
-                    <option value="">Wähle hier dein Projekt</option>
-                    <option value="Romaqua - Johannes Kingma">Romaqua - Johannes Kingma</option>
-                    <option value="Ara Münsterlingen - Stefano Cardinale">Ara Münsterlingen - Stefano Cardinale</option>
-                    <option value="Landfrauen Weinfelden - Johannes Kingma">Landfrauen Weinfelden - Johannes Kingma</option>
-                    <option value="Primarschule Altnau - Urs Schläpfer">Primarschule Altnau - Urs Schläpfer</option>
-                    <option value="Craniosacral Therapie Muhmentaler - Rosa Maria Ventre">Craniosacral Therapie Muhmentaler - Rosa Maria Ventre</option>
-                    <option value="AFC St. Galler Bears - Stefano Cardinale">AFC St. Galler Bears - Stefano Cardinale</option>
-                    <option value="Bodensee Tourismus - Bettina De Monte">Bodensee Tourismus - Bettina De Monte</option>
-                </select>
+                <div id="app">
+                    <select v-model="NameId" v-on:change="NameSelect">
+                        <option v-for="Name in Names" :value="Project.id">{{ Name }}</option>
+                    </select>
+                </div>
 
                 <label for="zeitaufwand">Zeitaufwand</label>
-                <input type="number" id="zeitaufwand" v-model="hoursWorked" placeholder="Stunden" min="0" required>
+                <input type="time" id="zeitaufwand" v-model="hoursWorked" placeholder="Stunden" min="0" required>
 
                 <div class="buttons">
                     <button type="button" class="back-btn" onclick="window.history.back()">← Go back</button>

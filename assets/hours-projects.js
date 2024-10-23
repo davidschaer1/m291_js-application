@@ -8,19 +8,17 @@ const app = Vue.createApp({
         }
     },
     methods: {
-        submitData() {
-            const selectedStudent = JSON.parse(localStorage.getItem('selectedStudent'));
-            const dashboardEntry = {
-                studentName: selectedStudent.fullname,
-                project: this.selectedProject,
-                hoursWorked: this.hoursWorked,
-                coach: selectedStudent.coach,
-            };
-            this.dashboardData.push(dashboardEntry);
-            localStorage.setItem('dashboardData', JSON.stringify(this.dashboardData));
-        },
+        async loadProject() {
+                const response = await fetch('https://api-sbw-plc.sbw.media/Project');
+                const data = await response.json();
+                this.Project = data.resources;
+            },
+        ProjectSelect(){
+            this.selectedProject = this.Project.find(Project => Project.id === this.ProjectId);
+        
+         },
     },
     mounted() {
-        this.studentId = JSON.parse(localStorage.getItem('selectedStudent'));
-    }
+        this.ProjectId = JSON.parse(localStorage.getItem('selectedProject'));
+    },
 }).mount('#app');
