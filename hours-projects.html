@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="./assets/style.css">
     <script src="./assets/hours-projects.js" defer></script>
 </head>
-<body>
+<body id="app">
     <div class="container">
        <div class="logo">
             <img src="./assets/img/sbw+neue-medien.svg" alt="logo SBW Neue Medien">
        </div>
 
         <div class="form-box">
-            <form @submit.prevent="submitData">
+            <form action="/dashboard.html" @submit.prevent="submitData">
                 <label for="projekt">Projekt:</label>
                 <select id="projekt" v-model="selectedProject">
                     <option value="">Wähle hier dein Projekt</option>
