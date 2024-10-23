@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="./assets/dashboard.js" defer></script>
 </head>
 <body>
     <div class="tabelle">
         <div class="logo">
-            <img src="./assets/img/sbw+neue-medien.svg" alt="logo SBW Neue Medien">
+            <img src="./ assets/img/sbw+neue-medien.svg" alt="logo SBW Neue Medien">
         </div>
 
         <h1>Dashboard</h1>
-<br>
+
+        <br>
         <table>
             <thead>
                 <tr>
@@ -24,41 +26,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr v-for="entry in dashboardData">
+                    <td>{{ entry.studentName }}</td>
+                    <td>{{ entry.project }}</td>
+                    <td>{{ entry.hoursWorked }}</td>
+                    <td>{{ entry.coach }}</td>
                 </tr>
             </tbody>
         </table>

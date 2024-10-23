@@ -15,16 +15,13 @@
         </div>
          
         <div class="user-input-box">
-
             <h2>Deine Angaben</h2>
-            <form>
+            <form @submit.prevent="saveData">
                 <div id="app">
                     <select v-model="studentId" v-on:change="studentSelect">
-                      <option v-for="student in students" :value="student.id">{{ student.fullname }}</option>
+                        <option v-for="student in students" :value="student.id">{{ student.fullname }}</option>
                     </select>
-                  </div>
-                </select>
-
+                </div>
                 <button type="submit" class="submit">Go next →</button>
             </form>
         </div>
