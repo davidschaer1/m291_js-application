@@ -5,26 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Input</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/app.js" defer></script>
 </head>
 <body>
     <div class="container">
         <div class="logo">
-            <img src="/assets/images/sbw+neue-medien.svg" alt="logo SBW Neue Medien">
+            <img src="./assets/img/sbw+neue-medien.svg" alt="logo SBW Neue Medien">
         </div>
-
-        <h1>Welcher User?</h1>
-
+         
         <div class="user-input-box">
+
             <h2>Deine Angaben</h2>
             <form>
-                <label for="vorname">Vorname</label>
-                <input type="text" id="vorname" name="vorname">
-
-                <label for="nachname">Nachname</label>
-                <input type="text" id="nachname" name="nachname">
-
-                <label for="geburtstag">Geburtstag</label>
-                <input type="date" id="geburtstag" name="geburtstag">
+                <div id="app">
+                    <select v-model="studentId" v-on:change="studentSelect">
+                      <option v-for="student in students" :value="student.id">{{ student.fullname }}</option>
+                    </select>
+                  </div>
+                </select>
 
                 <button type="submit" class="submit">Go next →</button>
             </form>
