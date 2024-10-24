@@ -5,31 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekt Auswahl</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/hours-projects.js" defer></script>
 </head>
-<body id="app">
+<body>
     <div class="container">
-       <div class="logo">
+        <div class="logo">
             <img src="./assets/img/sbw+neue-medien.svg" alt="logo SBW Neue Medien">
-       </div>
+        </div>
+        <div id="app" class="form-box">
+            <div class="form">
+                <label for="projektauswahl">Projekt</label>
+                <select v-model="worked.ProjectID" v-on:change="ProjectSelect">
+                    <option v-for="Project in Projects" :value="Project.ID">{{ Project.Name }}</option>
+                </select>
 
-        <div class="form-box">
-            <form action="/dashboard.html" @submit.prevent="submitData">
-                <label for="projekt">Projekt:</label>
-                <div id="app">
-                    <select v-model="NameId" v-on:change="NameSelect">
-                        <option v-for="Name in Names" :value="Project.id">{{ Name }}</option>
-                    </select>
-                </div>
+                <label for="zeitaufwand">Arbeitsminuten</label>
+                <input type="number" v-model="worked.Minutes" required>
 
-                <label for="zeitaufwand">Zeitaufwand</label>
-                <input type="time" id="zeitaufwand" v-model="hoursWorked" placeholder="Stunden" min="0" required>
+                <label for="datum">Datum</label>
+                <input type="date" id="datum" v-model="worked.Date" required>
 
                 <div class="buttons">
                     <button type="button" class="back-btn" onclick="window.history.back()">← Go back</button>
-                    <button type="submit" class="submit">Submit →</button>
+                    <button v-on:click="submitData" class="submit">Submit →</button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </body>

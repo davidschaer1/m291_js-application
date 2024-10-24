@@ -8,21 +8,19 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/app.js" defer></script>
 </head>
-<body id="app">
+<body>
     <div class="container">
         <div class="logo">
             <img src="./assets/img/sbw+neue-medien.svg" alt="logo SBW Neue Medien">
         </div>
-         
-        <div class="user-input-box">
-            <h2>Deine Angaben</h2>
-            <form action="/hours-projects.html" @submit.prevent="saveData">
-                <div id="app">
+        <div id="app" class="user-input-box">
+            <h2 class="marginh1">Deine Angaben</h2>
+            <form @submit.prevent="saveData">
+                <div>
                     <select v-model="studentId" v-on:change="studentSelect">
                         <option v-for="student in students" :value="student.id">{{ student.fullname }}</option>
                     </select>
                 </div>
-                 <!-- <link class="submit" href="hours-projects.html"> Go next → </links> -->
                 <button type="submit" class="submit">Go next →</button>
             </form>
         </div>

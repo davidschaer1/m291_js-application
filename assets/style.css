@@ -1,3 +1,4 @@
+/* Allgemeine Grundstile */
 * {
     margin: 0;
     padding: 0;
@@ -5,111 +6,142 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #000;
-    color: #fff;
+    color: #e0e0e0; /* Weiche Schriftfarbe */
     height: 100vh;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.marginh1{
+    margin-bottom: 1rem;
+}
+
+/* Container */
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 500px; /* Maximale Breite für die Box */
+    max-width: 500px;
     padding: 20px;
-    text-align: center;
 }
 
+/* Form-Box */
 .form-box {
-    background-color: #2b2b2b;
-    border: 2px solid #00ff00;
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    max-width: 500px; /* Maximale Breite für das Formular */
-    margin-bottom: 20px;
-    margin-right: 30rem;
-}
-
-.user-input-box{
-    background-color: #2b2b2b;
-    border: 2px solid #00ff00;
-    border-radius: 10px;
-    padding: 20px;
+    background-color: #1f1f1f; /* Dunkles Grau für eleganten Look */
+    border: none;
+    border-radius: 12px;
+    padding: 40px;
     width: 100%;
     max-width: 500px;
-    align-items: left;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Tiefere Schatten für moderne Tiefe */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.form-box:hover {
+    transform: translateY(-5px); /* Schwebender Effekt beim Hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8); /* Erhöhter Schatten beim Hover */
+}
+
+/* Logo Styling */
 .logo {
-    display: flex;
-    justify-content: flex-start; /* Logo linksbündig ausrichten */
     position: absolute;
     top: 10px;
     left: 10px;
-    margin-top: 2rem;
-    margin-left: 2rem;
+}
+
+.logo img {
+    max-width: 130px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Leichte Vergrößerung beim Hover */
+    filter: brightness(1.2); /* Helleres Logo beim Hover */
 }
 
 /* Formular Styling */
-form label {
+.form {
     display: flex;
-    margin: 10px 0 5px;
-    align-items: left !important; 
-}
-
-label{
-    align-items: left;
-}
-
-form select, form input {
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    padding: 10px;
+}
+
+.form label {
+    width: 100%;
+    text-align: left;
+    color: #bbb;
+    margin-bottom: 8px;
+    font-weight: bold;
+    letter-spacing: 1px; /* Bessere Lesbarkeit durch Abstand */
+}
+
+.form select, .form input, form select {
+    width: 100%;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
     background-color: #333;
     color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4); /* Innere Schatten für Tiefe */
 }
 
+.form select:focus, form input:focus, form select:focus{
+    outline: none;
+    box-shadow: 0 0 10px #00ff00, inset 0 4px 8px rgba(0, 0, 0, 0.4); /* Leuchtender Rand und innere Tiefe beim Fokus */
+    background-color: #444;
+}
 
+.form select:hover, .form input:hover, form select:hover {
+    background-color: #444; /* Helleres Grau beim Hover */
+}
 
 /* Buttons Styling */
 .buttons {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    justify-content: space-between; /* Gleichmäßige Verteilung der Buttons */
+    width: 100%;
 }
 
 button, .button {
-    width: 48%;
-    height: 30%;
-    padding: 10px;
+    /* width: 48%; Gleiche Breite für beide Buttons */
+    padding: 12px;
     border: none;
     background-color: #00ff00;
     color: #000;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Leichter Schatten */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
     background-color: #00cc00;
+    transform: translateY(-3px); /* Leichter Schweb-Effekt */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Erhöhter Schatten beim Hover */
 }
 
-.back-btn {
+/* Spezielles Styling für den "Go back"-Button */
+button.back-btn {
     background-color: #555;
+    color: #fff;
 }
 
-.back-btn:hover {
+button.back-btn:hover {
     background-color: #444;
+}
+
+/* Bereich für das App-Element */
+#app {
+    margin: 2rem;
 }
 
 /* Tabelle Styling */
@@ -117,10 +149,18 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    background-color: #2b2b2b;
+    background-color: #1f1f1f;
     border: 2px solid #00ff00;
     border-radius: 10px;
     margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Schatten für Tiefe */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+table:hover {
+    transform: translateY(-5px); /* Schwebender Effekt beim Hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Stärkerer Schatten */
 }
 
 th, td {
@@ -132,46 +172,15 @@ th, td {
 th {
     background-color: #333;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Textabstand für einen moderneren Look */
 }
 
 td {
     background-color: #2b2b2b;
+    transition: background-color 0.3s ease; /* Weiche Animation bei Hover */
 }
 
-/* Ausrichtung der Labels */
-td:first-child {
-    text-align: left; /* Labels linksbündig ausrichten */
-}
-
-td:last-child {
-    text-align: right; /* Coach rechtsbündig für bessere Übersicht */
-}
-
-/* Anpassung des "Go back"-Buttons */
-button.back-btn {
-    background-color: #00ff00;
-    color: #000;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button.back-btn:hover {
-    background-color: #00cc00;
-}
-
-#app {
-    margin: 2rem;
-}
-
-.tabelle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 800px; /* Maximale Breite für die Box */
-    padding: 20px;
-    text-align: center;
+td:hover {
+    background-color: #333; /* Leichte Veränderung der Zellenfarbe beim Hover */
 }
