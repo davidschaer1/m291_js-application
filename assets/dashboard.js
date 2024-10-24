@@ -11,12 +11,12 @@ const app = Vue.createApp({
             const response = await fetch('https://api-sbw-plc.sbw.media/Timesheetview');
             const data = await response.json();
             this.dashboardData = data.resources;
-            // Sort the data from newest to oldest (assuming there is a 'date' property)
+            // Sort the data from newest to oldest using 'datum' field
             this.dashboardData.sort(this.compare);
         },
         compare(a, b) {
-            // Assuming the 'date' field in your data is in a comparable format (like ISO 8601)
-            return new Date(b.datum) - new Date(a.datum);  // Sort from newest to oldest
+            // Sort by 'datum' field, assuming it's a valid date string
+            return new Date(b.datum) - new Date(a.datum);  // Newest to oldest
         }
     },
     mounted() {

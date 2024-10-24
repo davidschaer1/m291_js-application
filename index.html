@@ -13,11 +13,11 @@
         <div class="logo">
             <img src="./assets/img/sbw+neue-medien.svg" alt="logo SBW Neue Medien">
         </div>
-        <div id="app" class="user-input-box">
-            <h2 class="marginh1">Deine Angaben</h2>
+        <div id="app" class="form-box">
+            <h1 class="marginh1">Deine Angaben</h1>
             <form @submit.prevent="saveData">
                 <div>
-                    <select v-model="studentId" v-on:change="studentSelect">
+                    <select class="selectname" v-model="studentId" v-on:change="studentSelect">
                         <option v-for="student in students" :value="student.id">{{ student.fullname }}</option>
                     </select>
                 </div>
