@@ -10,3 +10,14 @@ Mit dem Design als Grundlage begannen wir mit der Codierung der Applikation. Dab
 
 Design Link: https://www.figma.com/design/oZTLPUSi95zdO9mvpLMNOd/vuetify-ui-kit-light?node-id=1-420&t=qCDGOJ7qzLmbswek-1
 
+
+HTML Validator
+![image](https://github.com/user-attachments/assets/d45daa2b-146c-4f11-af0b-16fbb2090d4d)
+![image](https://github.com/user-attachments/assets/8c58d7fd-2d3f-49a5-a27f-6b04abd211dd)
+![image](https://github.com/user-attachments/assets/0e27ebec-29c1-44a8-97db-b4e7a1131119)
+
+CSS Validator:
+![image](https://github.com/user-attachments/assets/5ed9486f-4fbc-47fa-a1a8-bdae5d41bcec)
+
+
+Keine Fehler.
