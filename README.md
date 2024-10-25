@@ -1,5 +1,7 @@
 Projektdokumentation
 
+https://m291.dschaer.sbw.media/
+
 Im Rahmen des Moduls M291 haben wir eine Webapplikation entwickelt, die in Vue.js umgesetzt wurde. Die Applikation ermöglicht es Nutzern, Stunden und Projekte zu erfassen. Die Entwicklung begann mit praktischen Übungen zur Funktionalität der Anwendung.
 
 Designprozess
