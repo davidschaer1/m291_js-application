@@ -14,6 +14,17 @@ const app = Vue.createApp({
             // Sort the data from newest to oldest using 'datum' field
             this.dashboardData.sort(this.compare);
         },
+        async deletedashboardData(entryid) {
+            const url = `https://api-sbw-plc.sbw.media/Timesheet/${entryid}`;
+            const response = await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            this.loadDashboard();
+
+        },
         compare(a, b) {
             // Sort by 'datum' field, assuming it's a valid date string
             return new Date(b.datum) - new Date(a.datum);  // Newest to oldest

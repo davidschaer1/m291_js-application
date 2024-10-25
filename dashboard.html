@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/dashboard.js" defer></script>
 </head>
+
 <body id="app" class="bodydashboard">
     <div class="tabelle">
         <div class="logo">
@@ -26,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="entry in dashboardData" :key="entry.id">
+                <tr v-for="entry in dashboardData" :key="entry.ID" @click=deletedashboardData(entry.ID)>
                     <td>{{ entry.Fullname }}</td>
                     <td>{{ entry.ProjectName }}</td>
                     <td>{{ entry.Minutes }}</td>
@@ -39,4 +41,5 @@
         </div>
     </div>
 </body>
+
 </html>
